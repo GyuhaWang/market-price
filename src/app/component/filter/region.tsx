@@ -2,15 +2,15 @@
 import * as React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
-import { useCallback } from 'react';
-import category from '@/app/data/category';
+import country from '../../data/country';
 import DropDownMenu from '../dropDownMenuComponent';
-import Category from '@/app/types/category';
+import Region from '@/app/types/region';
+import { useCallback } from 'react';
 
-export default function CategoryComponent() {
+export default function RegionMenu() {
 	const router = useRouter();
-	const searchParams = useSearchParams();
 	const pathname = usePathname();
+	const searchParams = useSearchParams();
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const createQueryString = useCallback(
 		(name: string, value: string) => {
@@ -24,12 +24,9 @@ export default function CategoryComponent() {
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget);
 	};
-
-	const handleClose = (category?: Category) => {
-		if (category) {
-			router.push(
-				pathname + '?' + createQueryString('category', category.name)
-			);
+	const handleClose = (region?: Region) => {
+		if (region) {
+			router.push(pathname + '?' + createQueryString('region', region.region));
 		}
 		setAnchorEl(null);
 	};
@@ -37,8 +34,10 @@ export default function CategoryComponent() {
 	return (
 		<div>
 			<DropDownMenu
-				currentDisplayName={searchParams.get('category') ?? '카테고리'}
-				itemList={category}
+				currentDisplayName={
+					useSearchParams().get('region') ?? '지역을 골라주세요'
+				}
+				itemList={country}
 				handleOpen={handleClick}
 				handleClick={handleClose}
 				anchorEl={anchorEl}

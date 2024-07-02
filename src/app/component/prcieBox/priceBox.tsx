@@ -16,8 +16,8 @@ export default function PriceBoxComponent({data}:{data:Product}) {
    <Image 
        src={data.photoUrl && !isImgError ? `/${data.photoUrl}` : DEFAULT_PROFILE_IMG_URL}
       alt='item'  
-      width={100}
-      height={100}
+      width={50}
+      height={50}
       onError={() => setIsImgError(true)} 
 />
       <div className=' flex flex-col flex-1 justify-between pt-1'>    

@@ -1,4 +1,6 @@
-type Region = {
+import { MenuItemInterface } from "./menuItem";
+
+interface Region extends MenuItemInterface  {
     id:number;
     country: string;
     region: string;
