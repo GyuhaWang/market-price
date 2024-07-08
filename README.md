@@ -1,5 +1,7 @@
 <h1>베트남의 시장 물가를 공유하는 웹 서비스</h1>
 <br>
+<a href="https://market-price-ochre.vercel.app/">웹사이트</a>
+<br>
 <h2>기획 의도</h2>
 <ul>
   <li>베트남 여행중에 시장에서 흥정하는데 얼마에 사는 것이 적정 가격인지를 모르겠어요.</li>
@@ -17,5 +19,8 @@
   <li>product shema 구성</li>
   <li>create, get api 만들자.</li>
    <h4>배포</h4>
-  <li>현재 고민중</li>
+   front-end
+  <li>vercel</li>
+  back-end
+  <li>aws ec2</li>
 </ul>
