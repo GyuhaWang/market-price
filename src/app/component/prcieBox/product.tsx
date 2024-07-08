@@ -2,7 +2,7 @@
 import * as React from 'react';
 import PriceBoxComponent from './priceBox';
 import { useEffect, useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { getProduct } from '@/app/api/product/productApi';
 import Product from '@/app/types/product';
 import AveragePrice from '../averagePrice';
@@ -12,7 +12,6 @@ export default function ProductComponent() {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState<boolean | null>(null);
 	const searchParams = useSearchParams();
-	const pathname = usePathname();
 	const fetchData = async () => {
 		setLoading(true);
 		setError(null);

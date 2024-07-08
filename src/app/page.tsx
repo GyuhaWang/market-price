@@ -1,5 +1,6 @@
 import TopHeader from './header/topHeader';
 import ProductComponent from './component/prcieBox/product';
+import { Suspense } from 'react';
 
 export default function Home() {
 	return (
@@ -8,7 +9,9 @@ export default function Home() {
 				<TopHeader />
 			</header>
 			<div className="flex flex-col  pl-4 pr-4">
-				<ProductComponent />
+				<Suspense>
+					<ProductComponent />
+				</Suspense>
 			</div>
 			{/* <footer className="flex" ><SimpleBottomNavigation/></footer> */}
 		</main>

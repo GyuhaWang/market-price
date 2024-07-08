@@ -11,7 +11,7 @@ import {
 import RegionMenu from './region';
 import CategoryComponent from './category';
 import CurrencyFormatInput from '../currencyInput';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { PostProduct } from '@/app/api/product/productApi';
 import Product from '@/app/types/product';
 
@@ -87,17 +87,20 @@ export default function EditComponent() {
 						<div
 							id="filter"
 							className="flex flex-row">
-							<RegionMenu
-								handleInputChange={(value: string) =>
-									handleInputChange('region', value)
-								}
-							/>
-
-							<CategoryComponent
-								handleInputChange={(value: string) =>
-									handleInputChange('category', value)
-								}
-							/>
+							<Suspense>
+								<RegionMenu
+									handleInputChange={(value: string) =>
+										handleInputChange('region', value)
+									}
+								/>
+							</Suspense>
+							<Suspense>
+								<CategoryComponent
+									handleInputChange={(value: string) =>
+										handleInputChange('category', value)
+									}
+								/>
+							</Suspense>
 						</div>
 						<input
 							placeholder="상품명을 적어주세요"
