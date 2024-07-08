@@ -1,6 +1,6 @@
 import Product from '@/app/types/product';
 import Error from 'next/error';
-const envUrl = process.env.BASEURL;
+const productBaseUrl = 'http://13.209.10.7:3000/';
 export const getProduct = (region: string | null, category: string | null) => {
 	const params: Record<string, string> = {};
 	if (region) {
@@ -9,7 +9,7 @@ export const getProduct = (region: string | null, category: string | null) => {
 	if (category) {
 		params['category'] = category;
 	}
-	const baseUrl = `${envUrl}product`;
+	const baseUrl = `${productBaseUrl}product`;
 	const queryString = new URLSearchParams(params).toString();
 	const requrl = `${baseUrl}?${queryString}`;
 	return fetch(requrl, {
@@ -31,7 +31,7 @@ export const getAveragePrice = (
 	if (category) {
 		params['category'] = category;
 	}
-	const baseUrl = `${envUrl}product/average`;
+	const baseUrl = `${productBaseUrl}product/average`;
 	const queryString = new URLSearchParams(params).toString();
 	const requrl = `${baseUrl}?${queryString}`;
 	return fetch(requrl, {
@@ -43,7 +43,7 @@ export const getAveragePrice = (
 };
 export const PostProduct = async (product: Product) => {
 	try {
-		await fetch(`${envUrl}product`, {
+		await fetch(`${productBaseUrl}product`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
