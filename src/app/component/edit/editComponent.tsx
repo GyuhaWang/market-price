@@ -3,34 +3,28 @@ import * as React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import {
 	Box,
-	Button,
 	Dialog,
 	DialogActions,
 	DialogContent,
-	DialogContentText,
-	DialogProps,
 	DialogTitle,
-	FormControl,
-	FormControlLabel,
-	InputLabel,
-	MenuItem,
-	Select,
-	SelectChangeEvent,
-	Switch,
 } from '@mui/material';
 import RegionMenu from './region';
 import CategoryComponent from './category';
 import CurrencyFormatInput from '../currencyInput';
 import { useState } from 'react';
+import { PostProduct } from '@/app/api/product/productApi';
+import Product from '@/app/types/product';
 
 export default function EditComponent() {
 	const [open, setOpen] = React.useState(false);
+	const [buttonDisabled, setButtonDisabled] = useState(false);
 	const [productInput, setProductInput] = useState({
 		region: null,
 		category: null,
+		name: null,
 		price: null,
 		content: null,
-		imageURL: null,
+		imageURL: undefined,
 	});
 	function handleInputChange(field: string, value: any) {
 		setProductInput((prevState) => ({
@@ -46,9 +40,22 @@ export default function EditComponent() {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
-		event.preventDefault();
-		console.log(productInput);
+	const handleSubmit = async () => {
+		setButtonDisabled(true);
+		const { region, category, name, price, content, imageURL } = productInput;
+		if (!region || !category || !name || !price || !content) {
+			return alert('필수 입력사항을 모두 입력해주세요');
+		}
+		const newProduct = new Product(
+			'베트남',
+			region,
+			category,
+			name,
+			price,
+			imageURL,
+			content
+		);
+		await PostProduct(newProduct).then(() => setOpen(false));
 	};
 
 	return (
@@ -76,7 +83,7 @@ export default function EditComponent() {
 							m: 'auto',
 							gap: '0.5rem',
 						}}
-						onSubmit={(e) => console.log('submit')}>
+						onSubmit={() => console.log('submit')}>
 						<div
 							id="filter"
 							className="flex flex-row">
@@ -92,9 +99,13 @@ export default function EditComponent() {
 								}
 							/>
 						</div>
+						<input
+							placeholder="상품명을 적어주세요"
+							onChange={(e) => handleInputChange('name', e.target.value)}
+						/>
 
 						<CurrencyFormatInput
-							handleInputChange={(value: string) =>
+							handleInputChange={(value: number) =>
 								handleInputChange('price', value)
 							}
 						/>
@@ -107,7 +118,10 @@ export default function EditComponent() {
 				<DialogActions>
 					<input
 						type="submit"
-						onClick={(e) => handleSubmit(e)}
+						disabled={buttonDisabled}
+						onClick={async () =>
+							await handleSubmit().finally(() => setButtonDisabled(false))
+						}
 					/>
 				</DialogActions>
 			</Dialog>
