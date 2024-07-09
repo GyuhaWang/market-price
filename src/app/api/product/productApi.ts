@@ -1,6 +1,7 @@
 import Product from '@/app/types/product';
 import Error from 'next/error';
-const productBaseUrl = 'http://13.209.10.7:3000/';
+
+const productBaseUrl = 'https://mpviet.store/';
 export const getProduct = (region: string | null, category: string | null) => {
 	const params: Record<string, string> = {};
 	if (region) {

@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { getAveragePrice } from '../api/product/productApi';
+import { currencyFormat } from '../utils/numberformat';
 const AveragePrice = ({
 	region,
 	category,
@@ -17,7 +18,9 @@ const AveragePrice = ({
 	}, []);
 
 	return (
-		<div className="flex grow gap-1 text-lg font-bold">{`평균 가격:${avgPrice}`}</div>
+		<div className="flex grow gap-1 text-lg font-bold">{`평균 가격:${currencyFormat(
+			avgPrice
+		)}VND`}</div>
 	);
 };
 
