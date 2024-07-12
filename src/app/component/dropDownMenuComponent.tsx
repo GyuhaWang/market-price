@@ -41,7 +41,7 @@ export default function DropDownMenu<T extends MenuItemInterface>(
 					<MenuItem
 						key={index}
 						onClick={() => props.handleClick(data)}>
-						{data.displayName}
+						{data.label}
 					</MenuItem>
 				))}
 			</Menu>

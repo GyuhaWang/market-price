@@ -28,6 +28,6 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"src/app/component/edit/editComponent.jsx"
-	],
+, "src/app/component/core/dropDown/rectangleDropDown.jsx"	],
 	"exclude": ["node_modules"]
 }
