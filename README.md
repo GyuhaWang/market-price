@@ -24,3 +24,14 @@
   back-end
   <li>aws ec2</li>
 </ul>
+<br>
+<h2>시도중인 기술</h2>
+<ul>
+  <h4>react-hook-form</h4>
+  <h5>why</h5>
+  <li>유지보수에 좋다 : 일반 form을 구성하기 위해서 각 input 마다 useState로 만들어야 했던 부분을 useForm 하나로 바꿀 수 있다.</li>
+  <li>control을 사용하여 UI변경에 쉽게 대응할 수 있다 : register를 사용하여 <input/> 을 사용할 수도 있지만 <Controller/>를 사용해 써드파티 컴포넌트에도 적용가능하다.</li>
+  <h5>적용 <h5/> 
+  <li>edit form을 react-hook-form을 사용해서 변경</li>
+  <li>특히 controller를 사용해서 외부 UI Component를 사용할 수 있도록 만들었다.</li>
+</ul>
