@@ -1,19 +1,3 @@
-import TopHeader from './header/topHeader';
-import ProductComponent from './component/prcieBox/product';
-import { Suspense } from 'react';
-
 export default function Home() {
-	return (
-		<main className="w-full h-screen  ">
-			<header className="flex  flex-col sticky top-0">
-				<TopHeader />
-			</header>
-			<div className="flex flex-col  pl-4 pr-4">
-				<Suspense>
-					<ProductComponent />
-				</Suspense>
-			</div>
-			{/* <footer className="flex" ><SimpleBottomNavigation/></footer> */}
-		</main>
-	);
+	return <div>카테고리와 지역을 골라</div>;
 }
