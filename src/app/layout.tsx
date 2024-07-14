@@ -3,7 +3,7 @@ import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
-	title: 'MarketPriceVietNam',
+	title: '마켓프라이스',
 	description: '베트남 현지 물가 공유, 개발자:왕규하, GyuHaWang',
 };
 
