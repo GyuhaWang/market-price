@@ -1,5 +1,6 @@
 import { MenuItemInterface } from '@/app/types/menuItem';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { Size } from '@/app/types/size';
 
 const RectangleDropDown = ({
 	field,

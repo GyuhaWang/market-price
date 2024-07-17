@@ -1,1 +1,1 @@
-type Size = 's' | 'm' | 'l' | 'full' | number;
+export type Size = 's' | 'm' | 'l' | 'full' | number;

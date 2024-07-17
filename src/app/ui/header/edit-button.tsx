@@ -2,12 +2,12 @@
 import * as React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import { Dialog, DialogTitle } from '@mui/material';
-import { Suspense, useState } from 'react';
-import { PostProduct } from '@/app/api/product/productApi';
-import EditForm from '../core/form/editForm';
+import { useState } from 'react';
+import EditForm from '@/app/ui/header/edit-form';
 import Product from '@/app/types/product';
+import { PostProduct } from '@/app/api/actions';
 
-export default function EditComponent() {
+export default function EditButton() {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	const handleModalOpen = () => {

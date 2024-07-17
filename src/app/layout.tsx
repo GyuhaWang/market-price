@@ -2,7 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import TopHeader from './header/topHeader';
+import Header from '@/app/ui/header/bar';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Providers from './utils/provier';
+import { Suspense } from 'react';
+import Loading from './(overview)/loading';
+
 export const metadata: Metadata = {
 	title: '마켓프라이스',
 	description: '베트남 현지 물가 공유, 개발자:왕규하, GyuHaWang',
@@ -16,11 +21,11 @@ export default function RootLayout({
 	return (
 		<html lang="kr">
 			<body>
-				<main className="w-full h-screen  ">
-					<header className="flex  flex-col sticky top-0">
-						<TopHeader />
+				<main className="w-full h-screen flex  flex-col overflow-y-clip ">
+					<header className="flex w-full  ">
+						<Header />
 					</header>
-					{children}
+					<div className="flex grow w-full overflow-y-auto">{children}</div>
 				</main>
 				<Analytics />
 				<SpeedInsights />

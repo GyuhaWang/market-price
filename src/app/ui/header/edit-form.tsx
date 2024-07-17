@@ -6,8 +6,8 @@ import Product from '@/app/types/product';
 import { TextareaAutosize, TextField } from '@mui/material';
 import { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import RectangleDropDown from '../dropDown/rectangleDropDown';
-import CurrencyFormatInput from '../input/currencyInput';
+import RectangleDropDown from '@/app/ui/rectangle-drop-down';
+import CurrencyFormatInput from '@/app/ui/currency-input';
 
 // 고려사항 - 비즈니스 로직과 뷰를 구분해서 ui, 기능 변경에 대응하기 쉽게 만들어보자!!
 
@@ -29,6 +29,7 @@ export default function EditForm({
 			region: '',
 			category: '',
 			description: '',
+			like: 0,
 		},
 	});
 	const [submitButtonAvailable, setSubmitButtonAvailable] = useState(true);

@@ -1,15 +1,10 @@
-'use client';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Product from '@/app/types/product';
-import Image from 'next/image';
-import { useState } from 'react';
-import { DEFAULT_PROFILE_IMG_URL } from '@/app/variables';
 import { currencyFormat } from '@/app/utils/numberformat';
-
-export default function PriceBoxComponent({ data }: { data: Product }) {
-	const [isImgError, setIsImgError] = useState<boolean>(false);
-
+import Button from '@/app/ui/products/popular-button';
+import currency from '@/app/data/currency';
+export default function PriceBox({ data }: { data: Product }) {
 	return (
 		<Box
 			sx={{
@@ -33,11 +28,24 @@ export default function PriceBoxComponent({ data }: { data: Product }) {
 				<div className="text-xs">{data.region}</div>
 				<div> {data.name}</div>
 				<div className="text-lg font-bold">
-					{currencyFormat(data.price)} VND
+					<span>
+						{`${currencyFormat(data.price)} VND `}
+
+						<span className="text-xs font-normal">
+							{currencyFormat(
+								data.price * (currency.currency / currency.currencyStandard)
+							)}
+							원
+						</span>
+					</span>
 				</div>
 				<div className=" flex grow text-md font-normal">{data.description}</div>
 			</div>
-			<button>h</button>
+
+			<Button
+				like={data.like}
+				id={data._id}
+			/>
 		</Box>
 	);
 }

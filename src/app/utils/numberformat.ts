@@ -1,8 +1,7 @@
-export const currencyFormat = (number: number)=>{
+export const currencyFormat = (number: number) => {
+	const result = number
+		.toFixed(0)
+		.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
 
-
-    const result =  number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-
-    return result;
-    
-    }
+	return result;
+};
