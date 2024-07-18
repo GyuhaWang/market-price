@@ -38,4 +38,13 @@
   <h5>적용 <h5/> 
   <li>edit form을 react-hook-form을 사용해서 변경</li>
   <li>특히 controller를 사용해서 외부 UI Component를 사용할 수 있도록 만들었다.</li>
+  <h4>Server Side Rendering 변경</h4>
+    <h5>why</h5>
+    <li>기존 코드는 매번 페이지에서 API 호출을 하는 형태였다. 하지만 유저가 데이터를 볼 때 항상 최신 최신 데이터를 가져와서 보여주지 않아도 된다고 판단함 </li>
+    <li> ssr로 변경하여 캐시된 데이터를 가져옴</li>
+    <li>edit 또는 카테고리 등을 변경 하면 revalidate를 통해서 최신 데이터를 가져와서 보여주도록 변경함</li>
+  <h4>좋아요 기능 추가 client side rendering</h4>
+    <h5>why</h5>
+     <li>좋아요를 누를 때 마다 전체 데이터를 가져와서 업데이트 할 필요가 없다고 판단 - 좋아요의 갯수가 실시간으로 연동될 필요는 없지 않을까?(다만 내가 누른 좋아요는 적용됨)</li>
+     <li>기존 좋아요 갯수에 내가 현재 누른 좋아요를 더하는 것은 client side에서 처리함- 나중에 revalidate 하면 합산된 좋아요가 보일 수 있다.</li>
 </ul>
