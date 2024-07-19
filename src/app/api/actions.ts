@@ -3,7 +3,7 @@ import { revalidatePath } from 'next/cache';
 
 import Product from '../types/product';
 
-const baseUrl = 'https://mpviet.store/';
+const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
 export async function getProduct(
 	category: string | null,
