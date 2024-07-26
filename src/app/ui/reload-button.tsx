@@ -1,10 +1,10 @@
 import ReplayIcon from '@mui/icons-material/Replay';
-
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
+import { redirect, RedirectType } from 'next/navigation';
 const ReloadButton = () => {
 	async function handleSubmit() {
 		'use server';
+
 		revalidatePath('/');
 		redirect('/');
 	}

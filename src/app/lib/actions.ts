@@ -89,3 +89,7 @@ export async function putLikeProduct(id: string) {
 		return { message: 'API error : putLikeProduct 를 실패하였습니다.' };
 	}
 }
+
+export async function revalidate() {
+	revalidatePath('/');
+}

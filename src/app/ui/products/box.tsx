@@ -43,6 +43,7 @@ export default function PriceBox({ data }: { data: Product }) {
 			</div>
 
 			<Button
+				key={data._id}
 				like={data.like}
 				id={data._id}
 			/>

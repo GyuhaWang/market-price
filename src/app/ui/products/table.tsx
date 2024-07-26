@@ -1,7 +1,6 @@
-import { getProduct } from '@/app/api/actions';
+import { getProduct } from '@/app/lib/actions';
 import Product from '@/app/types/product';
 import Box from '@/app/ui/products/box';
-import RegionSelect from '../header/region-form';
 
 export default async function ProductTable({
 	category,
@@ -15,7 +14,7 @@ export default async function ProductTable({
 		<div className="flex flex-col flex-1  gap-4 overflow-auto ">
 			{products.map((data: Product, index: React.Key | null | undefined) => (
 				<div
-					key={index}
+					key={data._id}
 					className="border-b border-solid border-[#ccc]">
 					<Box data={data} />
 				</div>

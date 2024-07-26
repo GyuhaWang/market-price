@@ -1,4 +1,4 @@
-import { getAvgPrice } from '@/app/api/actions';
+import { getAvgPrice } from '@/app/lib/actions';
 import { currencyFormat } from '@/app/utils/numberformat';
 import ReloadButton from '@/app/ui/reload-button';
 import currency from '@/app/data/currency';
