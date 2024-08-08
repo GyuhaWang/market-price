@@ -44,7 +44,6 @@ export async function getProduct(
 		});
 		return data.map((product: any) => Product.fromJson(product));
 	} catch (e) {
-		throw error;
 		return { message: 'API error : getProduct 를 실패하였습니다.' };
 	}
 }

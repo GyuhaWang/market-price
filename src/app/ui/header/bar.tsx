@@ -46,7 +46,9 @@ export default function HeaderBar() {
 				</div>
 			</div>
 			<div className="px-4 py-2">
-				<SearchBar />
+				<Suspense>
+					<SearchBar />
+				</Suspense>
 			</div>
 		</Box>
 	);
