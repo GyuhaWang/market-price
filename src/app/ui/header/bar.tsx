@@ -2,13 +2,12 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import RegionSelect from '@/app/ui/header/region-form';
 import CategorySelect from '@/app/ui/header/category-form';
-// import FilterComponent from '../component/filter/filter';
-// import EditComponent from '../component/edit/editComponent';
 import HelpIcon from '@mui/icons-material/Help';
 import Link from 'next/link';
 import Button from '@/app/ui/header/edit-button';
 import { Suspense } from 'react';
 import Login from './login';
+import SearchBar from '../searchbar/searchbar';
 export default function HeaderBar() {
 	return (
 		<Box
@@ -26,7 +25,9 @@ export default function HeaderBar() {
 				</Link>
 				<div className="flex flex-row gap-2">
 					<Login />
-					<Link href="https://emphasized-albacore-bb4.notion.site/Market-Price-Idea-Center-fef77105528b4d318253c08477fb2118?pvs=74">
+					<Link
+						aria-label="go to customer service"
+						href="https://emphasized-albacore-bb4.notion.site/Market-Price-Idea-Center-fef77105528b4d318253c08477fb2118?pvs=74">
 						<HelpIcon />
 					</Link>
 				</div>
@@ -43,6 +44,9 @@ export default function HeaderBar() {
 				<div>
 					<Button />
 				</div>
+			</div>
+			<div className="px-4 py-2">
+				<SearchBar />
 			</div>
 		</Box>
 	);

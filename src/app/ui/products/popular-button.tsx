@@ -10,6 +10,7 @@ const Button = ({ onClick }: { onClick: () => Promise<void> }) => {
 	const [disabled, setDisabled] = useState(false);
 	return (
 		<button
+			aria-label="thumbsUpButton"
 			disabled={disabled}
 			onClick={() => {
 				setDisabled(true);

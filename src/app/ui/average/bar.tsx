@@ -6,18 +6,21 @@ import currency from '@/app/data/currency';
 export default async function AVGPrice({
 	category,
 	region,
+	search,
 }: {
 	category: string | null;
 	region: string | null;
+	search: string | null;
 }) {
 	//get
-	const avgPrice = await getAvgPrice(category, region);
+	const avgPrice = await getAvgPrice(category, region, search);
 	return (
 		<div className="flex flex-col ">
 			{/* <span className="text-xs font-light">
 				{currency.currencyStandard}VND/{currency.currency}원
 				<span className="text-xs">({currency.updateTime})</span>
 			</span> */}
+
 			<div className="flex grow gap-1 text-lg font-bold">
 				{typeof avgPrice == 'number' ? (
 					<span>

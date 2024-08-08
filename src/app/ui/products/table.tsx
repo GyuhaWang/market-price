@@ -5,11 +5,13 @@ import Box from '@/app/ui/products/box';
 export default async function ProductTable({
 	category,
 	region,
+	search,
 }: {
 	category: string | null;
 	region: string | null;
+	search: string | null;
 }) {
-	const products = await getProduct(category, region);
+	const products = await getProduct(category, region, search);
 	return (
 		<div className="flex flex-col flex-1  gap-4 overflow-auto ">
 			{products.map((data: Product, index: React.Key | null | undefined) => (
