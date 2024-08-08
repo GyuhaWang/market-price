@@ -1,22 +1,35 @@
 'use server';
+
+import { Query } from '@/@types/query';
+import { error } from 'console';
 import { revalidatePath } from 'next/cache';
 
 import Product from '../types/product';
+import { createQueryString } from '../utils/createQueryString';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
 
 export async function getProduct(
 	category: string | null,
-	region: string | null
+	region: string | null,
+	search: string | null
 ) {
 	let requrl = `${baseUrl}product`;
-	if (category && region) {
-		requrl = `${requrl}?category=${category}&region=${region}`;
-	} else if (category) {
-		requrl = `${requrl}?category=${category}`;
-	} else if (region) {
-		requrl = `${requrl}?region=${region}`;
-	}
+	const categoryQuery: Query | null = category
+		? { key: 'category', query: category }
+		: null;
+	const regionyQuery: Query | null = region
+		? { key: 'region', query: region }
+		: null;
+	const searchQuery: Query | null = search
+		? { key: 'search', query: search }
+		: null;
+	const queryList: Query[] = [];
+	if (categoryQuery) queryList.push(categoryQuery);
+	if (regionyQuery) queryList.push(regionyQuery);
+	if (searchQuery) queryList.push(searchQuery);
+	const queryString = createQueryString(queryList);
+	requrl += queryString;
 
 	try {
 		const data = await fetch(requrl, {
@@ -31,22 +44,32 @@ export async function getProduct(
 		});
 		return data.map((product: any) => Product.fromJson(product));
 	} catch (e) {
+		throw error;
 		return { message: 'API error : getProduct 를 실패하였습니다.' };
 	}
 }
 
 export async function getAvgPrice(
 	category: string | null,
-	region: string | null
+	region: string | null,
+	search: string | null
 ) {
 	let requrl = `${baseUrl}product/average`;
-	if (category && region) {
-		requrl = `${requrl}?category=${category}&region=${region}`;
-	} else if (category) {
-		requrl = `${requrl}?category=${category}`;
-	} else if (region) {
-		requrl = `${requrl}?region=${region}`;
-	}
+	const categoryQuery: Query | null = category
+		? { key: 'category', query: category }
+		: null;
+	const regionyQuery: Query | null = region
+		? { key: 'region', query: region }
+		: null;
+	const searchQuery: Query | null = search
+		? { key: 'search', query: search }
+		: null;
+	const queryList: Query[] = [];
+	if (categoryQuery) queryList.push(categoryQuery);
+	if (regionyQuery) queryList.push(regionyQuery);
+	if (searchQuery) queryList.push(searchQuery);
+	const queryString = createQueryString(queryList);
+	requrl += queryString;
 
 	try {
 		const data = await fetch(requrl, {

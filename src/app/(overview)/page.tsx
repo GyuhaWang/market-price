@@ -9,23 +9,26 @@ export default async function Home({
 	searchParams?: {
 		category?: string;
 		region?: string;
+		search?: string;
 	};
 }) {
 	const category = searchParams?.category || null;
 	const region = searchParams?.region || null;
-
+	const search = searchParams?.search || null;
 	return (
 		<div className="h-full w-full p-4">
 			<Suspense fallback={<AveragePriceSkeleton />}>
 				<Bar
 					category={category}
 					region={region}
+					search={search}
 				/>
 			</Suspense>
 			<Suspense fallback={<ProductSkeleton />}>
 				<Table
 					category={category}
 					region={region}
+					search={search}
 				/>
 			</Suspense>
 		</div>

@@ -10,7 +10,9 @@ const ReloadButton = () => {
 	}
 	return (
 		<form action={handleSubmit}>
-			<button type="submit">
+			<button
+				aria-label="reload-products"
+				type="submit">
 				<ReplayIcon />
 			</button>
 		</form>

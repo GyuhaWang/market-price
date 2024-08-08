@@ -27,6 +27,7 @@ export default function CategorySelect() {
 		<form>
 			<div className="rounded-md w-full min-w-20 md:min-w-48   ">
 				<select
+					aria-label="select-category"
 					onChange={(e: any) => setQuery(e.target.value)}
 					id="category"
 					className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2  text-sm outline-2 placeholder:text-gray-500"
@@ -34,6 +35,8 @@ export default function CategorySelect() {
 					<option value="">전체</option>
 					{categories.map((region, index) => (
 						<option
+							aria-label="category-item"
+							aria-labelledby="select-category"
 							key={region.value}
 							value={region.value}>
 							{region.label}

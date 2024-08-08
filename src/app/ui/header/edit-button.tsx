@@ -28,7 +28,9 @@ export default function EditButton() {
 
 	return (
 		<React.Fragment>
-			<button onClick={handleModalOpen}>
+			<button
+				aria-label="edit-button"
+				onClick={handleModalOpen}>
 				{' '}
 				<EditIcon />
 			</button>
