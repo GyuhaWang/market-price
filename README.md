@@ -1,5 +1,5 @@
 <h1>베트남의 시장 물가를 공유하는 웹 서비스</h1>
-<h2>현재 버전:2.0.0</h2>
+<h2>현재 버전:2.0.1</h2>
 <p align="center">
 <img width="45%" alt="image" src="https://github.com/user-attachments/assets/adaf38a6-daa0-433c-9478-db1df3e9c689">
 <img width="45%" alt="image" src="https://github.com/user-attachments/assets/fd363a31-0d1a-4314-bc33-6b378bff3763">
