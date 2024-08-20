@@ -9,7 +9,7 @@ const SearchBar = () => {
 	const { replace } = useRouter();
 	const handleSearch = useDebouncedCallback((term) => {
 		const params = new URLSearchParams(searchParams);
-		console.log(term);
+
 		if (term) {
 			params.set('search', term);
 		} else {
@@ -19,7 +19,7 @@ const SearchBar = () => {
 	}, 300);
 
 	return (
-		<div className="w-full h-8  flex rounded-lg pb-1">
+		<div className="w-full h-8  flex rounded-lg ">
 			<input
 				onChange={(e: any) => handleSearch(e.target.value)}
 				className="rounded-l flex w-full h-full focus:outline-gray-400 px-2 outline-gray-300"
