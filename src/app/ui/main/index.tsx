@@ -1,18 +1,15 @@
-import { priceTagData } from '@/@types/priceTag';
+import { Nation } from '@/@types/nation';
+import { getCountriesPriceTags } from '@/app/(overview)/apis';
 import CountryBox from './country';
 
-const MainIndex = () => {
+const MainIndex = async ({ country }: { country: Nation }) => {
+	const data = await getCountriesPriceTags(country.name);
+
 	return (
-		<div className="w-full h-full px-12">
-			<CountryBox
-				data={priceTagData.slice(0, 3)}
-				country="베트남"
-			/>
-			<CountryBox
-				data={priceTagData}
-				country="일본"
-			/>
-		</div>
+		<CountryBox
+			data={data}
+			nation={country}
+		/>
 	);
 };
 

@@ -1,5 +1,5 @@
 import AveragePriceSkeleton from '@/app/ui/average/loading';
-import ProductSkeleton from '@/app/ui/products/loading';
+import ProductSkeleton from '@/app/ui/core/loading';
 
 const Loading = () => {
 	return (

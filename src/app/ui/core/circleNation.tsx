@@ -1,5 +1,5 @@
 import Image from 'next/image';
-const CircleNation = () => {
+const CircleNation = ({ imgUrl }: { imgUrl: string }) => {
 	return (
 		<Image
 			className="rounded-full"
@@ -7,7 +7,7 @@ const CircleNation = () => {
 			height={48}
 			width={48}
 			style={{ objectFit: 'fill' }}
-			src={'/vietnam.svg'}
+			src={imgUrl}
 		/>
 	);
 };

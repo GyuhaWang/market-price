@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import Header from '@/app/ui/header/bar';
 
 import UserSessionProvider from '@/app/prodiver/userSessionProvider';
 
@@ -20,12 +19,7 @@ export default function RootLayout({
 		<html lang="kr">
 			<body>
 				<main className="w-full h-screen flex  flex-col overflow-y-clip ">
-					<UserSessionProvider>
-						<header className="flex w-full  ">
-							<Header />
-						</header>
-						{<div className="flex grow w-full overflow-y-auto">{children}</div>}
-					</UserSessionProvider>
+					<UserSessionProvider>{children}</UserSessionProvider>
 				</main>
 				<Analytics />
 				<SpeedInsights />

@@ -8,6 +8,14 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				background: '#F5F8FC',
+				secondary: '#3170E7',
+				accent: '#F7B5CA',
+			},
+			gridTemplateColumns: {
+				priceTagMain: '1fr 1fr 1fr 1fr auto',
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':

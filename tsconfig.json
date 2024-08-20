@@ -28,7 +28,8 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"src/app/component/edit/editComponent.jsx",
-		"src/app/component/core/dropDown/rectangleDropDown.jsx"
+		"src/app/component/core/dropDown/rectangleDropDown.jsx",
+		"src/@types/next-auth.d.ts"
 	],
 	"exclude": ["node_modules"]
 }
