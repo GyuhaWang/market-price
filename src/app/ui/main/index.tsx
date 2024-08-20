@@ -1,5 +1,5 @@
 import { Nation } from '@/@types/nation';
-import { getCountriesPriceTags } from '@/app/(overview)/apis';
+import { getCountriesPriceTags } from '@/app/(overview)/actions';
 import CountryBox from './country';
 
 const MainIndex = async ({ country }: { country: Nation }) => {

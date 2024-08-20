@@ -1,5 +1,4 @@
 import { ReadonlyURLSearchParams, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
 
 const useRegion = (searchParams: ReadonlyURLSearchParams, pathname: string) => {
 	const { replace } = useRouter();

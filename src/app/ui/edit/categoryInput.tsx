@@ -1,7 +1,5 @@
 'use client';
-import { Category, categoryData } from '@/@types/category';
-import currency from '@/app/data/currency';
-import { useState } from 'react';
+import { Category } from '@/@types/category';
 import Capsule from '../core/regionCapsule';
 interface CategoryProps {
 	categories: Category[];

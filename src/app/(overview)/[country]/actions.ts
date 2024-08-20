@@ -1,7 +1,6 @@
 import { PriceTag } from '@/@types/priceTag';
 import { Query } from '@/@types/query';
 import { createQueryString } from '@/app/utils/createQueryString';
-import { skip } from 'node:test';
 
 export async function getPriceTags(
 	country: string | undefined,

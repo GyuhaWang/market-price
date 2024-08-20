@@ -1,7 +1,7 @@
 import { Nation, nationData } from '@/@types/nation';
 import NationBox from '@/app/ui/core/nationBox';
 import { currencyFormat } from '@/app/utils/numberformat';
-import { getPriceTagById } from './apis';
+import { getPriceTagById } from './actions';
 const Page = async ({
 	params,
 }: {

@@ -1,9 +1,9 @@
-import { MenuItemInterface } from "./menuItem";
+// import { MenuItemInterface } from "./menuItem";
 
-interface Region extends MenuItemInterface  {
-    id:number;
-    country: string;
-    region: string;
-  };
-  
-  export default Region;
+// interface Region extends MenuItemInterface  {
+//     id:number;
+//     country: string;
+//     region: string;
+//   };
+
+//   export default Region;

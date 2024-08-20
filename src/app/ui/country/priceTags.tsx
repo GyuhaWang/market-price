@@ -1,4 +1,4 @@
-import { getPriceTags } from '@/app/(overview)/[country]/apis';
+import { getPriceTags } from '@/app/(overview)/[country]/actions';
 import Box from '../core/priceTag';
 
 const CountryPriceTags = async ({

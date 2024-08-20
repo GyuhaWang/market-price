@@ -1,5 +1,5 @@
 'use client';
-import { Router, RunningWithErrorsOutlined } from '@mui/icons-material';
+
 import { useRouter } from 'next/navigation';
 const ErrorPage = () => {
 	const router = useRouter();

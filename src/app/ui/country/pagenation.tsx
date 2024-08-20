@@ -1,5 +1,4 @@
 'use client';
-import { getPriceTagsCount } from '@/app/(overview)/[country]/apis';
 import { Pagination } from '@mui/material';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';

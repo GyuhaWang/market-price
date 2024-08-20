@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import Header from '@/app/ui/header/bar';
-import { Pagination } from '@mui/material';
+
 const Layout = ({ children }: { children: ReactElement }) => {
 	return (
 		<div className="flex flex-col grow w-full  h-full bg-white">

@@ -1,8 +1,8 @@
-import { MenuItemInterface } from "./menuItem";
+// import { MenuItemInterface } from "./menuItem";
 
-interface Category extends MenuItemInterface  {
-    id:number;
-    name: string;
-  };
-  
-  export default Category;
+// interface Category extends MenuItemInterface  {
+//     id:number;
+//     name: string;
+//   };
+
+//   export default Category;

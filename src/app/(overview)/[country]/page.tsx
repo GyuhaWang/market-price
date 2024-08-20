@@ -1,7 +1,7 @@
 import { Nation, nationData } from '@/@types/nation';
 import CountryIndex from '@/app/ui/country';
 import PageNation from '@/app/ui/country/pagenation';
-import { getPriceTagsCount } from './apis';
+import { getPriceTagsCount } from './actions';
 type filters = 'search' | 'region' | 'category' | 'page';
 
 const Page = async ({

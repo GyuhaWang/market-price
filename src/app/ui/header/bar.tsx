@@ -1,13 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import RegionSelect from '@/app/ui/header/region-form';
-import CategorySelect from '@/app/ui/header/category-form';
-import HelpIcon from '@mui/icons-material/Help';
-import Link from 'next/link';
-import Button from '@/app/ui/header/edit-button';
-import { Suspense } from 'react';
 import Login from './login';
-import SearchBar from '../searchbar/searchbar';
 import Logo from '../core/logo';
 export default function HeaderBar() {
 	return (
@@ -28,24 +21,7 @@ export default function HeaderBar() {
 					</Link> */}
 				</div>
 			</div>
-			{/* <div className=" pl-4 pr-4 pb-2 flex justify-between">
-				<div className="flex gap-2">
-					<Suspense>
-						<RegionSelect />
-					</Suspense>
-					<Suspense>
-						<CategorySelect />
-					</Suspense>
-				</div>
-				<div>
-					<Button />
-				</div>
-			</div>
-			<div className="px-4 py-2">
-				<Suspense>
-					<SearchBar />
-				</Suspense>
-			</div> */}
+			\
 		</Box>
 	);
 }
