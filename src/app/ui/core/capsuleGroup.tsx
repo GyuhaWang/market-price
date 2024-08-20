@@ -18,7 +18,9 @@ const CapsuleGroup = <T1 extends MenuItemInterface, T3 extends unknown>({
 	return (
 		<div className="w-full flex gap-2">
 			{items.map((c, i) => (
-				<label className="flex">
+				<label
+					key={c.value}
+					className="flex">
 					<input
 						key={c.value}
 						type="radio"

@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import MainIndex from '../ui/main';
 import Header from '@/app/ui/header/bar';
 import { nationData } from '@/@types/nation';
@@ -18,7 +19,6 @@ export default async function Home() {
 							return (
 								<div key={n.id}>
 									<Suspense fallback={<ProductsSkeleton />}>
-										{/* @ts-expect-error Async Server Component */}
 										<MainIndex country={n} />
 									</Suspense>
 								</div>

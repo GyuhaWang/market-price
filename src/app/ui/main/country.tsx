@@ -26,8 +26,7 @@ const CountryBox = ({ data, nation }: { data: PriceTag[]; nation: Nation }) => {
 					<Link
 						aria-label="가격 더보기"
 						href={`/${nation.name}?page=1`}
-						className={`  w-20 min-w-20 h-20 flex items-center justify-center rounded-full bg-white shadow-inner hover:scale-95 hover:bg-gray-50 active:bg-gray-100 active:scale-90 transition-all`}
-						prefetch>
+						className={`  w-20 min-w-20 h-20 flex items-center justify-center rounded-full bg-white shadow-inner hover:scale-95 hover:bg-gray-50 active:bg-gray-100 active:scale-90 transition-all`}>
 						더보기
 					</Link>
 				</div>

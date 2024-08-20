@@ -32,7 +32,6 @@ const CountryIndex = ({
 
 			<div className="flex flex-col justify-between w-full ">
 				<Suspense fallback={<ProductSkeleton />}>
-					{/* @ts-expect-error Async Server Component */}
 					<CountryPriceTags
 						country={nation.name}
 						category={category}

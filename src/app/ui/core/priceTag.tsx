@@ -3,7 +3,7 @@ import { currencyFormat } from '@/app/utils/numberformat';
 import Link from 'next/link';
 import CircleUser from './circleUser';
 
-const PriceTag = ({ data }: { data: PriceTag }) => {
+const PriceTagBox = ({ data }: { data: PriceTag }) => {
 	return (
 		<div className="relative p-4  hover:scale-95 active:scale-90 transition-all">
 			<div className="absolute left-0 top-0 z-10">
@@ -38,4 +38,4 @@ const PriceTag = ({ data }: { data: PriceTag }) => {
 		</div>
 	);
 };
-export default PriceTag;
+export default PriceTagBox;
