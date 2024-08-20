@@ -29,7 +29,7 @@ export async function getPriceTags(
 
 	const data = await (
 		await fetch(
-			`http://localhost:3000//api/priceTag/${country}${queryString}`,
+			`${process.env.NEXT_PUBLIC_BASEURL}/api/priceTag/${country}${queryString}`,
 			{ cache: 'no-cache' }
 		)
 	).json();
@@ -61,7 +61,7 @@ export async function getPriceTagsCount(
 
 	const data = await (
 		await fetch(
-			`http://localhost:3000//api/priceTag/${country}/count/${queryString}`,
+			`${process.env.NEXT_PUBLIC_BASEURL}api/priceTag/${country}/count/${queryString}`,
 			{ cache: 'no-cache' }
 		)
 	).json();

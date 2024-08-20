@@ -6,7 +6,9 @@ export async function getCountriesPriceTags(
 ): Promise<PriceTag[]> {
 	const data = await (
 		await fetch(
-			`http://localhost:3000//api/priceTag/${country}?take=${limit ?? 5}`,
+			`${process.env.NEXT_PUBLIC_BASEURL}api/priceTag/${country}?take=${
+				limit ?? 5
+			}`,
 			{ next: { revalidate: 60 } }
 		)
 	).json();

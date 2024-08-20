@@ -21,7 +21,6 @@ export default function HeaderBar() {
 					</Link> */}
 				</div>
 			</div>
-			\
 		</Box>
 	);
 }
